@@ -22,7 +22,7 @@ ZSH_THEME_GIT_PROMPT_UNMERGED_PREFIX=" %{$fg[red]%}%{~%G%}"
 
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%}]%{$reset_color%}"
 
-OSID=$(cat /etc/os-release | awk -F= '/^ID=/{print $2}' | xargs)
+OSID=$([ -f /etc/os-release ] && cat /etc/os-release | awk -F= '/^ID=/{print $2}' | xargs)
 UNAME=${(L)$(uname)}
 
 function charHost {
